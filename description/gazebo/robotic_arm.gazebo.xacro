@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="robotic_arm_gazebo">
+    <!-- Gazebo colors for the robot -->
+    <gazebo reference="base_link">
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference="link_1">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="link_2">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="link_3">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="link_4">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="link_5">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="link_6">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <!-- Gazebo requires joint effort/velocity limits -->
+    <gazebo reference="joint_1">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <gazebo reference="joint_2">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <gazebo reference="joint_3">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <gazebo reference="joint_4">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <gazebo reference="joint_5">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <gazebo reference="joint_6">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+
+    <!-- ros2_control plugin for Gazebo -->
+    <gazebo>
+      <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+        <parameters>$(find robotic_arm)/config/robotic_arm_gazebo_controllers.yaml</parameters>
+        <robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
+      </plugin>
+    </gazebo>
+  </xacro:macro>
+
+</robot>

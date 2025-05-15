@@ -1,0 +1,16 @@
+<library path="robotic_arm">
+  <class name="robotic_arm/RoboticArmSystem"
+         type="robotic_arm::RoboticArmSystem"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Robot hardware plugin for 6-DOF robotic arm.
+    </description>
+  </class>
+  <class name="robotic_arm/RoboticArmController"
+         type="robotic_arm::RoboticArmController"
+         base_class_type="controller_interface::ControllerInterface">
+    <description>
+      Robot controller plugin for 6-DOF robotic arm.
+    </description>
+  </class>
+</library>
